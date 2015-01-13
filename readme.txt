@@ -51,4 +51,10 @@ http://www.instructables.com/id/Dot-Matrix-Printer-from-a-CDDVD-Reader-with-Ardu
 - How to run Processing from a Raspberry PI
 http://cagewebdev.com/index.php/raspberry-pi-running-processing-on-your-raspi/
 
+Banglaitalia team disassembling stuff:
+https://www.youtube.com/watch?v=_O75ws_KBdw
+
+Final result:
+
+
 

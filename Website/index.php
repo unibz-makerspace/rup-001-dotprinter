@@ -8,6 +8,9 @@
   
   
   <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+  
+	<!-- bxSlider CSS file -->
+	<link href="/css/jquery.bxslider.css" rel="stylesheet" />
     
   
 
@@ -84,43 +87,63 @@
      <div id="print-button" class="btn btn-large btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span><b>  Print now</b>!</div>
   
   
-  
-  <!--  <time class="lesson-info" datetime="">
-      Date and time TBD
-    </time>
-	!-->
-
-     <!--<p class="coming-soon">
-      More coming soon...
-    </p>  
-   !-->
+  </br>
+  </br>
 	
 	
+	<ul class="bxslider">
+	  <li><img src="/img/slideshow_1" /></li>
+	  <li><img src="/img/slideshow_1" /></li>
+	  <li><img src="/img/slideshow_1" /></li>
+	  <li><img src="/img/slideshow_1" /></li>
+	</ul>
 
     <footer class="footer">
-	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS and a lot of swearing. <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
+	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS, JQuery and a lot of swearing. <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
 	Made by: Brocanelli Stefan, <a href="https://www.linkedin.com/profile/view?id=305437338"><span>Gadler Daniele</span></a>, Salam Saifur, Shantunu Shaharear 
 
     </footer>
 	<a target="_blank" href="https://www.youtube.com/watch?v=_O75ws_KBdw"> <img title="Disassembling Time"src="./img/youtube_icon.png"/></a>
 		   <!-- <a target="_blank" href="http://www.unibz.it/it/inf/welcome/default.html"><img width="50" height= "50" class="left-bar-logo" src="./img/unibz_orange_logo.jpg"/></a> !-->
 
-	 <a target="_blank" href="https://www.facebook.com/inf.unibz.it"> <img title="Faculty of Computer Science Official Facebook Page" src="./img/facebook_icon.png"/></a>
+	 
+	 	 <a target="_blank" href="https://www.facebook.com/inf.unibz.it"> <img title="Faculty of Computer Science Official Facebook Page" src="./img/facebook_icon.png"/></a>
+	
+	<div id="contact_l"><span>CONTACT US</span></div>	
           
 	</center>
 	
-	
+	<div id="contact">
+		<form>
+			<h6>Fill all the gaps</h6>
+			<label for="email">Email:</label><br>
+			<input type="email" id="email" name="email" required><br>
+			<label for="object">Object</label><br>
+			<input type="text" id="object" name="object" required><br><br>
+			<textarea required></textarea>
+			<input type="submit" name="submit" vulue="submit" id="submit">
+			<div id="close"></div>
+		</form>
+	</div>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) Always to be put at the end for better loading time! -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> !-->
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
+	<!-- bxSlider Javascript file -->
+	<script src="/js/jquery.bxslider.min.js"></script>
+	
+	<script src="/js/script_home.js"></script>
+
+
 	<script> 
 	
 	jQuery(document).ready(function () {
 		getState();
 		setTimeout(getState , 100 ); //10.000
+		
+		 $('.bxslider').bxSlider();
 		
 	});
 	
@@ -148,10 +171,12 @@
 		$.get( "print.php", function( data ) {
 			setPrintingState();
 		});	
-		 
+		
+				 
 
 	});
-
+	
+	
 	
 	
 	</script>
