@@ -1,0 +1,20 @@
+body {
+	background-color:rgb(62, 171, 223);
+}
+
+.main-title {
+	font-family: 'Slabo 27px', serif;
+	color:rgb(238, 28, 37);
+}
+
+
+.left-bar-logo {
+	float:left;
+	
+}
+
+.footer-circle {
+	border-radius: 100%;
+
+
+}
