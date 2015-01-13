@@ -30,16 +30,20 @@ for 2D matrix pictures to be easily uploaded and printed.
 Link to a reference website:
 http://ironeurope.eu/bangla
 
-- Arduino: Code to be uploaded on an Arduino Uno connected
-to different engines and a Raspberry PI. 
+- Arduino: Code to be uploaded on an Arduino Uno
+connected to different engines and a Raspberry PI. 
 
 - Raspberry PI: Processing code for pictures' pixels elaboration. 
 Can either be run from a PC or from a Raspberry (way slower 
 in this case because Java). It sends data over to the Arduino.
-SSH script to be connected 
+SSH script to be connected .
 
-- Raspberry libraries requirements: Apache2, PHP5, PHP5 - SQL, processing-2.0,
-PHP5 - SSH tunnel connection, java6, xvfb,  a lot of patience.
+- Raspberry libraries requirements: Apache2, PHP5, PHP5 - SQL,
+processing-2.0, PHP5 - SSH tunnel connection, java6, xvfb, 
+a lot of patience.
+
+- Rhino_Blueprints: 3D blueprints for cutting the wooden and
+plexiglass pieces making up our printer box.
 
 Useful guides:
 - How to physically create a Matrix Printer
