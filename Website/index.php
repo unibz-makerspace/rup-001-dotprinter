@@ -46,50 +46,97 @@
     </time>
 
     <h2 class="lesson-title">Status :<span class="glyphicon glyphicon-print" aria-hidden="true"></span> <span id="print-status" style="color:green;" > Available</span> </h2>
-  <?php
+	<p style="color:red;  font-weight: bold;"> <!-- error. !-->
+	<?php
 	error_reporting(E_ALL);
 
 	if(isset($_POST['submit']))
 	//image successfully uploaded 
 	{
-	/*
-	echo "submit set";
+	/*echo "submit set";
 	print "Received " .$_FILES['userfile']['name'] . " size = ". $_FILES['userfile']['size'];
 	echo "<br>";
-	*/
-		$image_info = getimagesize($_FILES["file_field_name"]["tmp_name"]);
+		echo "Error: " . $_FILES["file"]["error"] . "<br>";
+		*/
+		$image_info = getimagesize($_FILES["file"]["tmp_name"]);
 		$width = $image_info[0];
+				
 	
+	    //if no file selected
 		if($_FILES["file"]["error"] > 0)
 		{
-			echo "Error: " . $_FILES["file"]["error"] . "<br>";
-		}
-		else
-		{		
-		   if  (move_uploaded_file($_FILES["file"]["tmp_name"], "print.png")) {
-		   echo "The file has been successfully uploaded. You may now print your picture.";
-		}
+			echo "No picture selected. Please retry.";
+			//still include the upload button
+		?>
+		</p>
+			<p>Please select a picture with maximum width 40px and maximum height 200px</p>
 			
-		}
-	}else{
-	?>
-	 <p>Please select a picture with maximum width 40px and maximum height 200px</p>
+			<form  stlye="color:green" enctype="multipart/form-data" action="index.php" method="POST">
+			 	Please choose a file: </br> <input type="file" name="file" accept="image/png">   <br/>
+			<input class="btn btn-large btn-primary" type="submit" name="submit" value="Upload Picture"/>
+			</form> 
+		<p style="color:red;  font-weight: bold;">
+			<?php
+			}
+			
+			//if image is too big
+			else if ($width > 40)
+			{
+				echo "Image's width is greater than 40px. Please retry.";
+				
+				
+			?>
+		</p>
+			<p>Please select a picture with maximum width 40px and maximum height 200px</p>
+			<form enctype="multipart/form-data" action="index.php" method="POST">
+				  </br> <input type="file" name="file" accept="image/png">   <br/>
+			<input class="btn btn-large btn-primary" type="submit" name="submit" value="Upload Picture"/>
+			</form>
+		<p style="color:green"> <!-- Success! !-->
+			<?php
+				}
+				//if no errors
+				else
+				{		
+				   if  (move_uploaded_file($_FILES["file"]["tmp_name"], "print.png")) 
+					  {
+						echo "The file has been successfully uploaded. You may now print your picture.";
+					  }
+					
+				}
+			}
+			
+			//picture has not been uploaded yet
+			else
+			{
+			?>
+			</p>
+			 <p>Please select a picture with maximum width 40px and maximum height 200px</p>
 
-	   
-	   <form enctype="multipart/form-data" action="index.php" method="POST">
-	Please choose a file:  </br> <input type="file" name="file" accept="image/png">   <br/>
-	<input class="btn btn-large btn-primary" type="submit" name="submit" value="Upload Picture"/>
-	</form>
+
+			   
+			<form enctype="multipart/form-data" action="index.php" method="POST">
+				Please choose a file:  </br> <input type="file" name="file" accept="image/png">   <br/>
+				<input class="btn btn-large btn-primary" type="submit" name="submit" value="Upload Picture"/>
+			</form>
 	   
 	   <?php
 	   
-	   } //chiusura else 
+	   } 
 	   
 	   ?>
 	   
 		 </br>
 		 
-     <div id="print-button" class="btn btn-large btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span><b>  Print now</b>!</div>
+     <div id="picture-button" class="btn btn-large btn-success"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><b>  Print Picture</b>!</div>
+	 
+	 
+	 <p>Or enter the text you'd like to have printed...</p>
+	 <form action="action_page.php">
+		<input type="text" name="firstname" value="30 cum Laude.">
+		</br>	
+		<input id="text-button" class="btn btn-large btn-success" type="submit" name="submit" value="Print Text"/>
+	</form>
   
   
   </br>
@@ -97,14 +144,14 @@
 	
 	
 	<ul class="bxslider">
-	  <li><img src="/img/slideshow_1_resized.png" /></li>
 	  <li><img src="/img/slideshow_1.png" /></li>
-	  <li><img src="/img/slideshow_1.png" /></li>
-	  <li><img src="/img/slideshow_1.png" /></li>
+	  <li><img src="/img/slideshow_2.png" /></li>
+	  <li><img src="/img/slideshow_3.png" /></li>
+	  <li><img src="/img/slideshow_4.png" /></li>
 	</ul>
 
     <footer class="footer">
-	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS, JQuery and a lot of swearing. <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
+	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS, JQuery and a lot of swearing.  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
 	Made by: Brocanelli Stefan, <a href="https://www.linkedin.com/profile/view?id=305437338"><span>Gadler Daniele</span></a>, Salam Saifur, Shantunu Shaharear 
 
     </footer>
@@ -113,6 +160,9 @@
 
 	 
 	<a target="_blank" href="https://www.facebook.com/inf.unibz.it"> <img title="Faculty of Computer Science Official Facebook Page" src="./img/facebook_icon.png"/></a>
+	
+	
+	<a target="_blank" href="https://www.github.com/DanyEle/matrix_printer"> <img title="Github Open Source Code of our Project" src="./img/github_icon.png"/></a>
 	
 	<div id="contact_l"><span>CONTACT US</span></div>	
           
@@ -171,11 +221,12 @@
 			$("#print-status").text("Available");
 	}
 	
-	$("#print-button").click(function () {
 	
+	$("#picture-button").click(function () {
 		$.get( "print.php", function( data ) {
 			setPrintingState();
 		});	
+		
 		
 				 
 

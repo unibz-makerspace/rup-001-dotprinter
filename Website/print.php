@@ -23,15 +23,16 @@ $status = $row[0]; //print the status
  if ($status == 0)
 	 {
 		//$stream = ssh2_exec($connection, './print.sh');	
-		//$stream = ssh2_exec($connection, 'echo $PWD');	
+		//$stream = ssh2_exec($connection, 'echo $PWD');
+
+		mysql_query("UPDATE dot_matrix_printer SET active = 1 WHERE id = 1");		
 		
 		$stream = ssh2_exec($connection, './print.sh');
 		stream_set_blocking($stream, true);
 		$stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
-		//echo stream_get_contents($stream_out);
+		echo stream_get_contents($stream_out);
 		
-		echo "printing";
-		mysql_query("UPDATE dot_matrix_printer SET active = 1 WHERE id = 1");
+		//echo "printing";
 
 	}
 else 
