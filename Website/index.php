@@ -45,16 +45,21 @@
      How to make use of useless things.<br>
     </time>
 
-    <h2 class="lesson-title">Status :<span class="glyphicon glyphicon-print" aria-hidden="true"></span> <span id="print-status" style="color:green" > Available</span> </h2>
+    <h2 class="lesson-title">Status :<span class="glyphicon glyphicon-print" aria-hidden="true"></span> <span id="print-status" style="color:green;" > Available</span> </h2>
   <?php
 	error_reporting(E_ALL);
 
-	if(isset($_POST['submit'])){
+	if(isset($_POST['submit']))
+	//image successfully uploaded 
+	{
 	/*
 	echo "submit set";
 	print "Received " .$_FILES['userfile']['name'] . " size = ". $_FILES['userfile']['size'];
 	echo "<br>";
 	*/
+		$image_info = getimagesize($_FILES["file_field_name"]["tmp_name"]);
+		$width = $image_info[0];
+	
 		if($_FILES["file"]["error"] > 0)
 		{
 			echo "Error: " . $_FILES["file"]["error"] . "<br>";
@@ -92,10 +97,10 @@
 	
 	
 	<ul class="bxslider">
-	  <li><img src="/img/slideshow_1" /></li>
-	  <li><img src="/img/slideshow_1" /></li>
-	  <li><img src="/img/slideshow_1" /></li>
-	  <li><img src="/img/slideshow_1" /></li>
+	  <li><img src="/img/slideshow_1_resized.png" /></li>
+	  <li><img src="/img/slideshow_1.png" /></li>
+	  <li><img src="/img/slideshow_1.png" /></li>
+	  <li><img src="/img/slideshow_1.png" /></li>
 	</ul>
 
     <footer class="footer">
@@ -107,7 +112,7 @@
 		   <!-- <a target="_blank" href="http://www.unibz.it/it/inf/welcome/default.html"><img width="50" height= "50" class="left-bar-logo" src="./img/unibz_orange_logo.jpg"/></a> !-->
 
 	 
-	 	 <a target="_blank" href="https://www.facebook.com/inf.unibz.it"> <img title="Faculty of Computer Science Official Facebook Page" src="./img/facebook_icon.png"/></a>
+	<a target="_blank" href="https://www.facebook.com/inf.unibz.it"> <img title="Faculty of Computer Science Official Facebook Page" src="./img/facebook_icon.png"/></a>
 	
 	<div id="contact_l"><span>CONTACT US</span></div>	
           
@@ -121,7 +126,7 @@
 			<label for="object">Object</label><br>
 			<input type="text" id="object" name="object" required><br><br>
 			<textarea required></textarea>
-			<input type="submit" name="submit" vulue="submit" id="submit">
+			<input type="submit" name="submit" value="submit" id="submit">
 			<div id="close"></div>
 		</form>
 	</div>
@@ -129,7 +134,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) Always to be put at the end for better loading time! -->
   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> !-->
     
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
 	
 	<!-- bxSlider Javascript file -->
 	<script src="/js/jquery.bxslider.min.js"></script>
