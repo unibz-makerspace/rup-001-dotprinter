@@ -132,10 +132,10 @@
 	 
 	 
 	 <p>Or enter the text you'd like to have printed...</p>
-	 <form action="action_page.php">
-		<input type="text" name="firstname" value="30 cum Laude.">
+	 <form >
+		<input type="text" name="firstname" value="30 cum Laude."  maxlength="45">
 		</br>	
-		<input id="text-button" class="btn btn-large btn-success" type="submit" name="submit" value="Print Text"/>
+		<input id="text-button" class="btn btn-large btn-success" id="letters-field" type="submit" name="submit" value="Print Text"/>
 	</form>
   
   
@@ -152,7 +152,8 @@
 
     <footer class="footer">
 	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS, JQuery and a lot of swearing.  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
-	Made by: Brocanelli Stefan, <a href="https://www.linkedin.com/profile/view?id=305437338"><span>Gadler Daniele</span></a>, Salam Saifur, Shantunu Shaharear 
+	Made by: Brocanelli Stefan, Gadler Daniele, Salam Saifur, Shantunu Shaharear </br>
+	Special thanks to: Angelo, Julian, Lorenzo, Marco, Naomi, Nick <span class="glyphicon glyphicon-heart"> </span>
 
     </footer>
 	<a target="_blank" href="https://www.youtube.com/watch?v=_O75ws_KBdw"> <img title="Disassembling Time"src="./img/youtube_icon.png"/></a>
@@ -214,7 +215,11 @@
 	}
 	
 	function setPrintingState() {
-			$("#print-status").text("Now printing...");
+			$("#print-status").text("Now printing your picture...");
+	}
+	
+	function setPrintingStateText() {
+			$("#print-status").text("Now printing your text...");
 	}
 	
 	function setAvailableState() {
@@ -226,9 +231,22 @@
 		$.get( "print.php", function( data ) {
 			setPrintingState();
 		});	
+
+	});
+	
+	
+	$("#text-button").click(function () {
+		//first generate picture
+		var textInput = $('#letters-field').val();
+		$.get( "letters.php", { text: textInput }, function( data ) {
+			setPrintingStateText();
+		});	
 		
 		
-				 
+		//then print
+		$.get( "print.php", function( data ) {
+			setPrintingState();
+		});	
 
 	});
 	
