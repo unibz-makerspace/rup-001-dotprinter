@@ -1,0 +1,35 @@
+[16-Jan-2015 15:47:11 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 15:47:14 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 15:48:29 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:14 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:23 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:23 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:34 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:34 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 77
+[16-Jan-2015 16:18:35 UTC] PHP Notice:  Undefined variable: string3 in /var/www/pic_generate.php on line 81
+[16-Jan-2015 16:20:26 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/pic_generate.php on line 41
+[16-Jan-2015 16:20:26 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/pic_generate.php on line 41
+[16-Jan-2015 16:20:26 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/pic_generate.php on line 41
+[16-Jan-2015 16:20:27 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/pic_generate.php on line 41
+[16-Jan-2015 16:20:27 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/pic_generate.php on line 41
+[16-Jan-2015 16:17:39 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 16:17:40 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 16:34:59 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 16:35:53 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 145
+[16-Jan-2015 16:36:38 UTC] PHP Notice:  Undefined index: text in /var/www/index.php on line 147
+[16-Jan-2015 16:52:57 UTC] PHP Notice:  Undefined index: text in /var/www/pic_generate.php on line 5
+[16-Jan-2015 16:53:35 UTC] PHP Notice:  Undefined index: text in /var/www/pic_generate.php on line 5
+[16-Jan-2015 16:55:00 UTC] PHP Notice:  Undefined index: text in /var/www/pic_generate.php on line 5
+[16-Jan-2015 16:55:24 UTC] PHP Notice:  Undefined index: text in /var/www/pic_generate.php on line 5

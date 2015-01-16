@@ -26,7 +26,7 @@
 
   <div class="content">
 
-  	<img  width="200px" height="153px" src="./img/dot_printer_700px.png" />
+  	<img  width="240px" height="180px" src="./img/dot_printer_700px.png" />
 	
     <h1 >Print it out!</h1>
 	
@@ -125,19 +125,23 @@
 	   } 
 	   
 	   ?>
-	   
-		 </br>
-		 
-     <div id="picture-button" class="btn btn-large btn-success"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><b>  Print Picture</b>!</div>
-	 
-	 
-	 <p>Or enter the text you'd like to have printed...</p>
-	 <form >
-		<input type="text" name="firstname" value="30 cum Laude."  maxlength="45">
-		</br>	
-		<input id="text-button" class="btn btn-large btn-success" id="letters-field" type="submit" name="submit" value="Print Text"/>
-	</form>
+	
+		 	 
+	 <p style="color:red">
+		<?php include 'pic_generate.php';?>
+	</p>
   
+		 <p>Or enter the text you'd like to have printed... Use '^' as new line. (max 3)</p>
+	 <form>
+		<input type="text" name="text" value="30 cum Laude." id="letters-field">
+		</br>	
+		<input id="text-button" class="btn btn-large btn-primary" type="submit" name="submit" value="Upload text"/>
+	</form>
+	
+	 <div id="picture-button" class="btn btn-large btn-success"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><b>  Print Picture</b>!</div>
+
+	
+	
   
   </br>
   </br>
@@ -152,7 +156,7 @@
 
     <footer class="footer">
 	Powered by: HTML, Bootstrap, Java, CSS, PHP, SQL, Bash Scripting, JS, JQuery and a lot of swearing.  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  </br>
-	Made by: Brocanelli Stefan, Gadler Daniele, Salam Saifur, Shantunu Shaharear </br>
+	Made by: Brocanelli Stefan, Gadler Daniele, Salam Saifur, Shantunu Shaharear  <span class="glyphicon glyphicon-wrench"></span></br>
 	Special thanks to: Angelo, Julian, Lorenzo, Marco, Naomi, Nick <span class="glyphicon glyphicon-heart"> </span>
 
     </footer>
@@ -218,9 +222,6 @@
 			$("#print-status").text("Now printing your picture...");
 	}
 	
-	function setPrintingStateText() {
-			$("#print-status").text("Now printing your text...");
-	}
 	
 	function setAvailableState() {
 			$("#print-status").text("Available");
@@ -235,20 +236,15 @@
 	});
 	
 	
-	$("#text-button").click(function () {
-		//first generate picture
-		var textInput = $('#letters-field').val();
-		$.get( "letters.php", { text: textInput }, function( data ) {
-			setPrintingStateText();
-		});	
+	// $("#text-button").click(function () {
+		////first generate picture
+		// var textInput = $('#letters-field').val();
 		
-		
-		//then print
-		$.get( "print.php", function( data ) {
-			setPrintingState();
-		});	
+		// $.get( "letters.php", function(data) {
+			// setTextPrintingState();	
+		// });	
 
-	});
+	// });
 	
 	
 	
