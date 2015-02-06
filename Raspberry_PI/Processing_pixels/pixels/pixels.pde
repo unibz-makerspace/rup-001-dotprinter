@@ -15,73 +15,63 @@ void setup() {
     String portName = Serial.list()[0]; //0
     
   
-     myPort = new Serial(this, portName, 9600);//opens the Serial Port
+     //myPort = new Serial(this, portName, 9600);//opens the Serial Port
     //IMG = loadImage("C:\\Users\\Daniele\\Dropbox\\pc_sharing\\UniBZ\\Management Engineering\\Arduino\\Processing_pixels\\pixels\\pics\\drone_print.png");//Open your image.
-    IMG = loadImage("D:\\FTP\\plus_test.png");
-    //IMG = loadImage("/var/www/print.png");
+    //IMG = loadImage("D:\\FTP\\raw.jpg");
+    IMG = loadImage("/var/www/print.png");
     image(IMG, 0, 0);
     
     //print 40 blank dots because... it's fucked up. Simple as that.
-    for(int i=0; i < 41; i++)
+    for(int i=0; i < 40; i++)
     {
       System.out.print(" 0 ");
       myPort.write('0'); 
+      delay(50);
     }
-    System.out.println();
     
-    delay(100);
+    System.out.println();
+    delay(3000);
     
     myPort.write('L');
    
 
 }
-void draw()   {
-  
-  
+void draw()   {  
   IMG.loadPixels(); 
-  
+    
   
   for (int y = 0; y < IMG.height; y++) {//check the lines
     for (int x = 0; x < IMG.width; x++) { //check each pixel in the line
       int loc = x + y * IMG.width; //the pixels are loaded as in a array, so its position is only a number.
              
-    if (IMG.pixels[loc]>color(160)) { //128
+    if (IMG.pixels[loc]>color(100)) { //128
         myPort.write('0');//if a pixel is not black, send a '0'.
         System.out.print(" 0 "); //get matrix with 0 1 of image
         delay(50);
         
-        delayAmount += 30;
+        delayAmount += 50;
       }
       else {
         myPort.write('1');//if a pixel is black, send a '1'.  
         System.out.print(" 1 "); //get matrix with 0 1 of image
         delay(50); //50
-        
-        delayAmount += 600;
+                
+        delayAmount += 750;
       }
     }
     
     
 
-    delay(delayAmount); //1000 wait 1 second for each pixel printed
-
-    delayAmount = 0;
+   delay(delayAmount); //1000 wait 1 second for each pixel printed
+   delayAmount = 0;
     
-    myPort.write('L');//send a "L" to indicate a new line.
-  
-   // while (myPort.available() <= 0) {
-        // until we receive the finish acknowledgement, wait
-     //  delay(100);
-  //  }
-  //  int data; ////debug shit for end of line control
-   // data = myPort.read();
-  
-    System.out.println();
+    myPort.write('L');//send a "L" to indicate a new line. 
+   System.out.println();
   }
   noLoop();
   
-  //all these try-catches are here to avoid including throws
-  //clauses for URL requests since the latter are not supported by Processing
+  // all these try-catches are here to avoid including throws
+  // clauses for URL requests since the latter are not supported by Processing
              
    String urlString = "http://banglaitalia.unibz.it/status%20change/?status=0";
     
@@ -107,19 +97,20 @@ void draw()   {
   String inputLine;
   //display server response, again debug shit
   //try {
-     // while ((inputLine = in.readLine()) != null)
-    //    System.out.println(inputLine);
-   // } catch (IOException ex) {
-  //    Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
+   //  // while ((inputLine = in.readLine()) != null)
+   //    System.out.println(inputLine);
+  // } catch (IOException ex) {
+ //    Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
   //}
   try {
     in.close();
   } catch (IOException ex) {
     Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
   }
+  
+	exit();
     
     
   
 }
-
 
