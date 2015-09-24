@@ -1,21 +1,23 @@
-****************************************************
-*********MATRIX PRINTER *****************************
-****************************************************
+# MATRIX PRINTER
+
 All the content of this repository was created by:
 Brocanelli Stefan, Gadler Daniele, Salam Saifur, 
 Shantunu Shaharear for the Introduction to 
-Management Engineering UniBZ Course and is 
+Management Engineering UniBZ 2014-2015 Course and is 
 hereby released with the GNU affero license.
 
+![Printer's Picture](http://naomimastachi.com/wp-content/uploads/2015/07/dot_printer01_large.jpg)
+
+![Printer's Picture](http://naomimastachi.com/wp-content/uploads/2015/07/dot_printer02_large.jpg)
 
 Special thanks to:
--Angelo Ventura
--Naomi Mustachi Espinosa Mireya
--Lorenzo Miori
--Julian Sanin
--Pekka Abrahamsson
--Marco Mondini 
--All the ones who encouraged and motivated us
+- Angelo Ventura
+- Naomi Mustachi Espinosa Mireya
+- Lorenzo Miori
+- Julian Sanin
+- Pekka Abrahamsson
+- Marco Mondini 
+- All the ones who encouraged and motivated us
 through the project.
 
 Repository description:
