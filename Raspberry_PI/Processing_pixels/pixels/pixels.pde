@@ -15,10 +15,10 @@ void setup() {
     String portName = Serial.list()[0]; //0
     
   
-     //myPort = new Serial(this, portName, 9600);//opens the Serial Port
+     myPort = new Serial(this, portName, 9600);//opens the Serial Port   x
     //IMG = loadImage("C:\\Users\\Daniele\\Dropbox\\pc_sharing\\UniBZ\\Management Engineering\\Arduino\\Processing_pixels\\pixels\\pics\\drone_print.png");//Open your image.
     //IMG = loadImage("D:\\FTP\\raw.jpg");
-    IMG = loadImage("/var/www/print.png");
+    IMG = loadImage("C:\\Users\\Daniele\\Pictures\\pictures_printer\\squirrel.png");
     image(IMG, 0, 0);
     
     //print 40 blank dots because... it's fucked up. Simple as that.
@@ -102,11 +102,10 @@ void draw()   {
   // } catch (IOException ex) {
  //    Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
   //}
-  try {
-    in.close();
-  } catch (IOException ex) {
-    Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
-  }
+// 
+  //} catch (IOException ex) {
+   // Logger.getLogger(pixels.class.getName()).log(Level.SEVERE, null, ex);
+ // }
   
 	exit();
     
